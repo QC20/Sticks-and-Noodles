@@ -1,6 +1,225 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+body {
+  background-color: #F7F3E9;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;  
+}
+
+a, a * {
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas#interactive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  transform: translateY(-50%);
+  z-index: 10;
+  animation-delay: 1s;
+  max-width: 300px;
+}
+
+.container .title h1 {
+  font-family: Oswald, sans-serif;
+  font-weight: 200;
+  line-height: 0.9;
+  font-size: 62pt;
+  margin-bottom: 0;
+}
+
+.container .title h2 {
+  font-family: Raleway, sans-serif;
+  font-weight: 300;
+  font-size: 20pt;
+  margin-top: 0;
+  line-height: 2;
+  margin-bottom: 100px;
+  padding-left: 10px;
+}
+
+.container .title h2 .learn-more-link {
+  color: #e45655;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.container .title h2 .learn-more-link:hover {
+  color: #edd683;
+}
+
+.container .title h2 .learn-more-link:active,
+.container .title h2 .learn-more-link:visited {
+  color: #e45655;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  width: 50px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  z-index: 102;
+}
+
+.button:before, .button:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: #e45655;
+  transition: all ease 0.3s;
+  border-radius: 8px;
+}
+
+.button:before {
+  top: 0;
+}
+
+.button:after {
+  bottom: 0;
+}
+
+.button div {
+  width: 100%;
+  height: 5px;
+  background-color: #e45655;
+  transition: opacity ease 0.3s;
+  border-radius: 8px;
+}
+
+nav.active .button div {
+  opacity: 0;
+}
+
+nav.active .button:before {
+  transform: rotate(-45deg) translate3d(0, 11px, 0);
+}
+
+nav.active .button:after {
+  transform: rotate(45deg) translate3d(0, -11px, 0);
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: max-width 0.3s ease, opacity 0.3s ease;
+  max-width: 0;
+  opacity: 0;
+}
+
+nav.active ul {
+  max-width: 600px;
+  opacity: 1;
+}
+
+nav ul li {
+  margin-right: 20px;
+  white-space: nowrap;
+}
+
+nav ul li a {
+  color: #e45655;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: Raleway, sans-serif;
+  font-weight: 300;
+  font-size: 20pt;
+  line-height: 2;
+}
+
+nav ul li a:hover {
+  color: #edd683;
+}
+
+nav ul li a:active,
+nav ul li a:visited {
+  color: #e45655;
+}
+
+@media (max-width: 720px) {
+  .title {
+    left: 5%;
+    top: 15%;
   }
   
+  .container .title h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 1000;
+    line-height: 0.9;
+    font-size: 120pt;
+    margin-bottom: -15px;
+    text-transform: uppercase;
+    color: #e45655 !important;
+  }
+  
+  .container .title h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 24pt;
+    line-height: 1;
+    padding-left: 5px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  nav ul li a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 24pt;
+    line-height: 1;
+  }
+}

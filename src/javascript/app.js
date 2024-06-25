@@ -72,7 +72,7 @@ let noodlesDropped = 0;
 // Count the number of noodles that were initially created
 let noodlesCount = 0;
 // Define how many noodles will be on screen
-let noodlesMax = 14;
+let noodlesMax = 12;
 // Equal the noodle timeout to the length of the noodles to keep world object totals in balance
 let noodleTimeout = noodleLength;
 
@@ -248,3 +248,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
     noodlesCount++;
   }, 200);
 });
+

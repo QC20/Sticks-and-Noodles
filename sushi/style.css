@@ -1,0 +1,248 @@
+
+
+body{
+    background:#DDDDDD;
+    padding:32px;}
+  
+  .wrapper{
+    text-align:center;
+    width:512px;
+    margin:80px auto;}
+  
+  .wrapper:after{
+    content:"";
+    display:block;
+    clear:both;}
+  
+  .sushi{
+    width:80px;
+    height:160px;
+    margin:0px 24px;
+    float:left;
+  }
+  
+  .sushi-wrap{
+  width:80px;
+  height:160px;
+  transition:.3s;
+  position:relative;
+  }
+  
+  .sushi-wrap:hover{
+    margin:0px 16px;
+    /*Transformで3Dの傾きをつける*/
+    transform: rotateX(60deg) rotateZ(30deg);
+    -webkit-transform: rotateX(60deg) rotateZ(30deg);
+    -moz-transform: rotateX(60deg) rotateZ(30deg);
+    -ms-transform: rotateX(60deg) rotateZ(30deg);
+    /*子要素も立体表示されるように設定する*/
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -ms-transform-style:preserve-3d;}
+  
+  .neta{
+    position:absolute;
+    top:0px; /*マイナスを入れるとシャリに埋もれる*/
+    z-index:10;
+    height:160px;
+    width:76px;
+    /*子要素も立体表示されるように設定する*/
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -ms-transform-style:preserve-3d;}
+  
+  .neta.magro{
+  background-image: linear-gradient(
+      -0deg,	
+      #D03636 25%,	
+      #D03636 25%,	
+      #D03636 50%,
+      #E96E6E 50%,
+      #E96E6E 75%,
+      #D03636 75%,
+      #D03636)	;
+  -webkit-background-size: 32px 32px;
+  }
+  
+  .neta.salmon{
+  background-image: linear-gradient(
+      -0deg,	
+    #ee7636 25%,
+    #ee7636 25%,
+    #ee7636 50%,
+    #ed9769 50%,
+    #ed9769 75%,
+    #ee7636 75%,
+    #ee7636 )	;
+  -webkit-background-size: 32px 32px;
+  }
+  
+  
+  .neta.tai{
+  background-image: linear-gradient(
+      -0deg,	
+    #FFFCEB 25%,
+    #FFFCEB 25%,
+    #FFFCEB 50%,
+    #FDF6D4 50%,
+    #FDF6D4 75%,
+    #FFFCEB 75%,
+    #FFFCEB )	;
+  -webkit-background-size: 32px 32px;
+  }
+  
+  .neta.tamago{
+  background-image: linear-gradient(
+      -0deg,	
+    #F5ED01 40%,
+    #000 40%,
+    #000 60%,
+    #F5ED01 60%,
+    #F5ED01 )	;
+  }
+  
+  /*側面*/
+  .neta:before, .neta:after{
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;}
+  
+  .neta:before{
+    content:'';
+    transform-origin:right center;
+    -webkit-transform-origin:right center;
+    -moz-transform-origin:right center;
+    -ms-transform-origin:right center;
+    transform:rotateY(-90deg);
+    -webkit-transform:rotateY(-90deg);
+    -moz-transform:rotateY(-90deg);
+    -ms-transform:rotateY(-90deg);
+    width:20px;
+    left:56px;  /*width+left=全体幅*/}
+  
+  .neta:after{
+      content:'';
+    transform-origin:bottom center;
+    -webkit-transform-origin:bottom center;
+    -moz-transform-origin:bottom center;
+    -ms-transform-origin:bottom center;
+    transform:rotateX(90deg);
+    -webkit-transform:rotateX(90deg);
+    -moz-transform:rotateX(90deg);
+    -ms-transform:rotateX(90deg);
+    height:20px;
+    top:auto;
+    bottom:0;
+    background-position:bottom center;}
+  
+  .neta.magro::before,.neta.magro::after{background-image: linear-gradient(
+      -0deg,	
+      #D03636 25%,	
+      #D03636 25%,	
+      #D03636 50%,
+      #E96E6E 50%,
+      #E96E6E 75%,
+      #D03636 75%,
+      #D03636)	;
+  -webkit-background-size: 32px 32px;}
+  
+  .neta.magro::after{background:#D03636;}
+  
+  .neta.salmon::before{background-image: linear-gradient(
+      -0deg,	
+    #ee7636 25%,
+    #ee7636 25%,
+    #ee7636 50%,
+    #ed9769 50%,
+    #ed9769 75%,
+    #ee7636 75%,
+    #ee7636 )	;
+    -webkit-background-size: 32px 32px;}
+  
+  .neta.salmon::after{
+    background:#ee7636;}
+  
+  .neta.tai::before{background-image: linear-gradient(
+      -0deg,	
+    #FFA89E 25%,
+    #FFA89E 25%,
+    #FFA89E 50%,
+    #FDF6D4 50%,
+    #FDF6D4 75%,
+    #FFA89E 75%,
+    #FFA89E )	;
+    -webkit-background-size: 32px 32px;}
+  
+  .neta.tai::after{
+    background:#FDF6D4;}
+  
+  .neta.tamago::before{background-image: linear-gradient(
+      -0deg,	
+    #E2DB04 40%,
+    #000 40%,
+    #000 60%,
+    #E2DB04 60%,
+    #E2DB04 )	;}
+  
+  .neta.tamago::after{background:#E2DB04;}
+  
+  
+  .shari{
+    position:absolute;
+    top:0px;/*+の値を入れるとネタが埋もれる*/
+    z-index:-1;
+    height:152px;
+    width:68px;
+    background:#f1f1f1;
+    border-radius:8px 0 0 0;
+    transform-style:preserve-3d;
+    -webkit-transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    -ms-transform-style:preserve-3d;}
+  
+  .shari:before, .shari:after{
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+     background:#fff;
+    background-size: cover;}
+  
+  .shari:before{
+    transform-origin:right center;
+    transform:rotateY(-90deg);
+    border-radius:8px 0 0 0;
+    width:60px;
+    left:8px;}
+  
+  .shari:after{
+    border-radius:8px 0 0 0;
+    transform-origin:bottom center;
+    transform:rotateX(90deg);
+    height:60px;
+    top:auto;
+    bottom:0;}
+  
+  .shari.tamago::before{
+  background-image:linear-gradient(
+      -0deg,	
+    #fff 45%,
+    #000 45%,
+    #000 65%,
+    #fff 65%,
+    #fff )	;}
+  
+  /*シャドウ*/
+  .shadow{position:absolute;
+    top:8px;
+    left:8px;
+    right:32px;
+    bottom:24px;
+    background:rgba(0,0,0, 0.1);
+    box-shadow:0 0 25px 25px rgba(0,0,0, 0.1);
+    transform:translateZ(-90px);
+    -webkit-transform:translateZ(-90px);
+    -moz-transform:translateZ(-90px);
+    -ms-transform:translateZ(-90px);}
+  
+  

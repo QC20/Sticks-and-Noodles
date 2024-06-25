@@ -3,12 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noodle Simulation</title>
+  <title>Noodle Shop Website Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="src/styles/style.css">
 </head>
 <body>
-  <canvas id="interactive"></canvas>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Get in touch</a></li>
+    </ul>
+    <div class="button">
+      <div></div>
+    </div>
+  </nav>
+  <div class="container">
+    <canvas id="interactive"></canvas>
+    <div class="title animated fadeInLeft slow">
+      <h1 style="color: #e45655;">Sticks'n'Noodles</h1>
+      <h2>
+        <a href="your-link-url-here" class="learn-more-link">
+          <div>Learn more</div>
+        </a>
+      </h2>
+    </div>
+  </div>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
   <script src="src/javascript/app.js"></script>
+  <script src="src/javascript/menu.js"></script>
 </body>
 </html>
