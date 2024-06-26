@@ -12,10 +12,10 @@
 <body>
   <nav>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#works">Works</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#contact">Get in touch</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="jonaskjeldmand.vercel.app">Works</a></li>
+      <li><a href="https://www.linkedin.com/in/yourprofile">Team</a></li>
+      <li><a href="mailto:your-email@example.com">Get in touch</a></li>
     </ul>
     <div class="button">
       <div></div>
@@ -26,13 +26,17 @@
     <div class="title animated fadeInLeft slow">
       <h1 style="color: #e45655;">Sticks'n'Noodles</h1>
       <h2>
-        <a href="your-link-url-here" class="learn-more-link">
+        <div class="learn-more-link" onclick="navigateToSushi()">
           <div>Learn more</div>
-        </a>
+        </div>
       </h2>
     </div>
   </div>
-  
+  <script>
+    function navigateToSushi() {
+      window.location.href = 'src/sushi/index.html';
+    }
+    </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
   <script src="src/javascript/app.js"></script>
   <script src="src/javascript/menu.js"></script>

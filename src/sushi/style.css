@@ -244,5 +244,118 @@ body{
     -webkit-transform:translateZ(-90px);
     -moz-transform:translateZ(-90px);
     -ms-transform:translateZ(-90px);}
-  
-  
+
+    body {
+      padding-top: 60px; /* Adjust this value based on your nav height */
+    }
+    
+    .wrapper {
+      z-index: 1;
+      position: relative;
+    }
+    
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    body {
+  background-color: #e45655; /* #coral is the original and that looks good */       
+  padding-top: 60px; /* Adjust this value based on your nav height */
+}
+
+.wrapper {
+  z-index: 1;
+  position: relative;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.button {
+  width: 50px;
+  height: 30px;
+  margin-right: 3%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.button:before, .button:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  transition: all ease 0.3s;
+  border-radius: 8px;
+}
+
+.button:before {
+  top: 0;
+}
+
+.button:after {
+  bottom: 0;
+}
+
+.button div {
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  transition: opacity ease 0.3s;
+  border-radius: 8px;
+}
+
+nav.active .button div {
+  opacity: 0;
+}
+
+nav.active .button:before {
+  transform: rotate(-45deg) translate3d(0, -50%, 0);
+  top: 50%;
+}
+
+nav.active .button:after {
+  transform: rotate(45deg) translate3d(0, 50%, 0);
+  bottom: 50%;
+}
+
+nav ul {
+  margin-right: 7%;
+  display: flex;
+  transform: translateX(20px);
+  opacity: 0;
+  transition: all ease 0.3s;
+}
+
+nav.active ul {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+nav ul li {
+  list-style-type: none;
+  margin-left: 30px;
+  color: #fff;
+  font-family: Calibri, sans-serif;
+  font-size: 2rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}

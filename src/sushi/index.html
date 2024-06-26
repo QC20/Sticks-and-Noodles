@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sushi Animation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../src/styles/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="../index.html#home" style="color: white;">Home</a></li>
+      <li><a href="../index.html#works" style="color: white;">Works</a></li>
+      <li><a href="../index.html#team" style="color: white;">Team</a></li>
+      <li><a href="../index.html#contact" style="color: white;">Get in touch</a></li>
+    </ul>
+    <div class="button">
+      <div></div>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+    <!-- Sushi animation content -->
+    <div class="sushi">
+      <div class="sushi-wrap">
+        <div class="neta magro"></div>
+        <div class="shari">
+          <span class="shadow"></span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="sushi">
+      <div class="sushi-wrap">
+        <div class="neta salmon"></div>
+        <div class="shari">
+          <span class="shadow"></span>
+        </div>
+      </div>  
+    </div>
+    
+    <div class="sushi">
+      <div class="sushi-wrap">
+        <div class="neta tai"></div>
+        <div class="shari">
+          <span class="shadow"></span>
+        </div>
+      </div>  
+    </div>
+    
+    <div class="sushi ">
+      <div class="sushi-wrap">
+        <div class="neta tamago"></div>
+        <div class="shari tamago">
+          <span class="shadow"></span>
+        </div>
+      </div>  
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $('.button').on('click', function(){
+        $('nav').toggleClass('active');
+      });
+  
+      // Add this part for responsiveness
+      $(window).on('resize', function() {
+        if ($(window).width() > 768) {
+          $('nav').removeClass('active');
+        }
+      });
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../src/javascript/menu.js"></script>
+</body>
+</html>
